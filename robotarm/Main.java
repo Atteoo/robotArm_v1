@@ -17,10 +17,13 @@ public class Main extends SimpleApplication {
     //initialize movement
     boolean initMoveToItem = true; boolean initMoveToStorage = false;
     //temps for movement loops
-    int initialTemp = 0; int baseTemp = 0; int shoulderTemp = 0; int elbowTemp = 0;
+    int baseTemp = 0;
+    int shoulderTemp = 0;
+    int elbowTemp = 0;
     //status of rotations
-    boolean initialRotated = false; boolean baseRotated = false;
-    boolean shoulderRotated = false; boolean elbowRotated = false;
+    boolean baseRotated = false;
+    boolean shoulderRotated = false;
+    boolean elbowRotated = false;
     
     Vector3f targetItemPos; Vector3f targetSlotPos;
     Vector3f anglesItem  = new Vector3f(0f, 0f, 0f); Vector3f anglesSlot = new Vector3f(0f, 0f, 0f);
@@ -131,8 +134,8 @@ public class Main extends SimpleApplication {
     }
     
     private void prepareTransition() {
-        baseTemp = 0; shoulderTemp = 0; elbowTemp = 0; initialTemp = 0;
-        baseRotated = false; shoulderRotated = false; elbowRotated = false; initialRotated = false;
+        baseTemp = 0; shoulderTemp = 0; elbowTemp = 0;
+        baseRotated = false; shoulderRotated = false; elbowRotated = false;
     }
     
 	private void rotateBase(Arm arm, float step) {
